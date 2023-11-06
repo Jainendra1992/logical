@@ -1,0 +1,343 @@
+Q-> find the Reverse order of String 
+public class UpdateDemo {
+  public static void main(String[] args) {
+	String name = "Jainendra";
+	int leng = name.length();
+	String rev ="";
+	for(int i=leng-1; i>=0 ;i--)
+	{
+		rev = rev + name.charAt(i);
+	}
+	System.out.println("Reverse of Name is " + rev);
+// Using character array
+String str = "Jainendra";
+  String rev = "";
+	
+  char a[] =str.toCharArray(); 
+  int len=a.length;
+  for(int i=len-1; i>=0 ;i--)
+      {
+	 rev = rev+a[i]; 
+     }
+    System.out.println("reverse value:"+rev);
+	
+  
+// by using StringBuffer class
+
+StringBuffer sb = new StringBuffer(str);
+System.out.println(sb.reverse());
+
+
+
+}
+}
+
+---------------------------------------------------------------------
+Q-2-> find the ArmstrongNumber 
+
+public static void main(String[] args) {
+	  Scanner s= new Scanner(System.in);
+	   System.out.println("Enter the Number:");
+	   int no = s.nextInt();
+	   int t1 = no;
+	   int leng=0;
+	   while(t1 !=0)
+	   {
+		   leng = leng+1;
+		   t1=t1/10;
+	   }
+	   int t2 = no;
+	   int arm = 0;
+	   int rem;
+	   while(t2 !=0)
+	   {
+		   int mul=1;
+		   rem=t2%10;
+		   for(int i=1; i<=leng ; i++)
+		   {
+			   mul = mul*rem;
+		   }
+		   arm= arm + mul;
+		   t2=t2/10;
+	   }
+     if(arm==no)
+     {
+    	 System.out.println(no+" is armstrong number");
+     }
+     else
+     {
+    	 System.out.println(no+"is not armstrong number");
+     }
+  
+  }
+}
+--------------------------------------------------------------------------
+Q->3 find the  Palindrome String 
+
+public static void main(String[] args) {
+	String s= "madam";
+	String rev = "";
+	for(int i =s.length()-1; i>=0 ;i--)
+	{
+		rev = rev+s.charAt(i);
+	}
+	//System.out.println(rev);
+	
+	if(s.equals(rev))
+	{
+		System.out.println("Palindrome String");
+	}
+	else
+	{
+		System.out.println("Not A Palindrome String");
+	}
+  
+  }
+}
+------------------------------------------------------------
+Q->4 find the  Palindrome Integer number 
+      int no = 122;
+      int temp= no;
+      int rev =0, rem;
+      while(temp !=0)
+      {
+    	  rem = temp%10;
+    	  rev=rev*10+rem;
+    	  temp=temp/10;
+      }
+      if(no==rev)
+      {
+    	  System.out.println(no + " is palindrome nmber");
+      }
+      else
+      {
+    	  System.out.println(no + " is not a palindrome number");
+      }
+  }
+}
+-----------------------------------------------------------
+Q-5 find the 2nd larget elements and 2nd smallest elements elements 
+ public static void main(String[] args) {
+     int []a = {6,8,2,4,3,1,5,7,9};
+     int temp;
+     for(int i =0; i<a.length; i++)
+     {
+    	 for(int j=i+1; j<a.length;j++)
+    	 {
+    		 if(a[i]<a[j])
+    		 {
+    			 temp=a[i];
+    			 a[i] = a[j];
+    			 a[j] = temp;
+    		 }
+    		 
+    	 }
+     }
+     System.out.println("second larget elements is "+ a[1]); 
+  }
+}
+-----------------------------------------------------------
+Q->6 find the duplicate value in array
+                public static void main(String[] args) {
+		int[] a= {3,5,4,3,2,2,1};
+		System.out.println("duplicate value are :");
+		for(int i=0; i<a.length-1 ;i++)
+		{
+			for(int j=i+1 ;j<a.length; j++)
+			{
+				if(a[i]==a[j] && (i !=j))
+				{
+					System.out.print(a[j] + " ,");
+				}
+			}
+		}
+	}
+--------------------------------------------
+Q=>7 Febanacci series using recurrsion 
+public class UpdateDemo {
+	static int a=0, b =1, c;
+	public static void main(String[] args) {
+		System.out.println(a+" " + b);
+		UpdateDemo ob = new UpdateDemo();
+		ob.printUp(10);	
+	}
+	void printUp(int i)
+	{
+		if(i>=1)
+		{
+			c=a+b;
+			System.out.println(" " + c);
+			a=b;
+			b=c;
+			printUp(i-1);
+		}
+	}
+	
+	
+}
+
+---------
+public static void main(String[] args) {
+	int n1=0,n2=1, sum=0;
+	System.out.println(n1+" " +n2);
+	for(int i=2; i<10; i++)
+	{
+		sum=n1+n2; //0+1
+		System.out.println(sum+" "); //1 ,2
+		n1 = n2;//1
+		n2=sum;//1
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+-----------------------------------
+Q->8 Number system find the Palindrome Number
+
+    public static void main(String[] args) {
+       int m = n;
+        int sum = ;
+      while(n !=0)
+      {
+           int d = n%10;
+            sum = sum*10+d;
+            n= n/10;
+       }
+if(sum == m)
+{
+     System.out.println(n +"it is palindrome number")
+}
+else
+{
+   System.out.println(n+"it is not palindrome number");
+}
+-------------------------------------------------------------
+Q->9 Write a java program to remove all white spaces from given String
+          
+       public static void main(String[] args) {
+	 String ste ="ja va s t ar";
+	 
+	 String str1 = ste.replaceAll("\\s", "");
+	 System.out.println(str1);
+}
+----------------------------------------------------------
+Q->Swpping two number  using java 
+  public static void main(String[] args) {
+	int a = 10, b=20;
+	System.out.println("Before swapping value are.."+a+" "+ b);
+	 
+          //logic using third variable
+       int t=a;
+	   a=b;
+	   b=t;
+           //logic using two variable
+           a=a+b;
+           b=a-b;
+           a=a-b;
+	   System.out.println("after swapping value are.."+a+" "+ b);
+	
+}
+----------------------------------------
+ 3 Ways of Reverse a Number
+public static void main(String[] args) {
+  Scanner sc = new Scanner(System.in);
+  System.out.println("Enter a Number:");
+  int num = sc.nextInt();
+ 
+	/*
+	 *  int rev=0;
+	 * while(num !=0) { rev=rev*10+num%10; num=num/10; }
+	 */
+  //----- StringBuffer
+	/*
+	 * StringBuffer sw = new StringBuffer(String.valueOf(num)); StringBuffer rev =
+	 * sw.reverse();
+	 */
+  //------- StringBuilder
+  
+   StringBuilder sbl = new StringBuilder();
+   sbl.append(num);
+   StringBuilder rev = sbl.reverse();
+  System.out.println("rvserse Number: " + rev);
+}
+--------------------------------------------
+Q->Remove all the zeros from the given number
+
+ public static void main(String[] args) {
+ 	int t =  num;
+ 	int rev = 0;
+ 	while(t>0)
+ 	{
+ 		int digit= t%10;
+ 		rev = rev*10+digit;
+ 		t = t/10;
+ 	}
+ 	t = rev;
+ 	rev = 0;
+ 	while(t > 0)
+ 	{
+ 		int digit = t%10;
+ 		if(digit!=0)
+ 		{
+ 			rev = rev*10 + digit;
+ 			t = t/10;
+ 		}
+ 	}
+ 	System.out.println("Original Number:" + num);
+ 	System.out.println("Revmove the Zero Number:" + rev);
+
+}
+}
+------------------
+Q-> Find out whether the given digits are in ascending order or no
+public static void main(String[] args) {
+ 	// let a[5] = 34 56 78 32 12 --> 78 56 34 32 12
+
+	int a[] = new int [5]; int temp;
+	Scanner r = new Scanner(System.in);
+	System.out.println("Enter value in  Array");
+	for(int i= 0; i<a.length;i++)
+	{
+		a[i] = r.nextInt();
+	}
+	for(int i=0 ; i<a.length ; i++)
+	{
+		for(int j = 0 ; j<a.length; j++)
+		{
+			if(a[i]<a[j])
+			{
+				temp = a[i];
+				a[i] = a[j];
+				a[j] =temp;
+			}
+		}
+	}
+	for(int i=0 ;i<a.length;i++)
+	{
+		System.out.print(a[i] + " ,");
+	}	
+}
+}
+-----------------------------------------------------------------
+Q=> Find the array in two pair digit sum equal 50
+    public static void main(String[] args) {
+	 int array[] = {10,20,30,40,50};
+	 int sum=50;
+	 for(int i = 0 ; i<array.length;i++)
+	 {
+		 for(int j = i+ 1 ; j<array.length; j++)
+		 {
+			 if(array[j] ==sum-array[i])
+			 {
+				 System.out.println(i+" " + j);
+			 }
+		 }
+	 }
+  }
